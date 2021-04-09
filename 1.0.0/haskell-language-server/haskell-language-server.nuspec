@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>haskell-language-server</id>
+    <version>1.0.0</version>
+    <packageSourceUrl>https://github.com/jneira/HlsChoco</packageSourceUrl>
+    <title>Haskell Language Server</title>
+    <authors>Haskell IDE Team</authors>
+    <projectUrl>https://github.com/haskell/haskell-language-server</projectUrl>
+    <iconUrl>https://github.com/haskell/haskell-language-server/raw/master/docs/logos/logo-32.png</iconUrl>
+    <copyright>Haskell IDE Team</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/haskell/haskell-language-server/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/haskell/haskell-language-server</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/haskell/haskell-language-server/issues</bugTrackerUrl>
+    <tags>haskell-language-server lsp-server haskell ide</tags>
+    <summary>Successor of ghcide and haskell-ide-engine. One IDE to rule them all</summary>
+    <description>See https://github.com/haskell/haskell-language-server/blob/master/README.md</description>
+    <releaseNotes>See https://github.com/haskell/haskell-language-server/releases/tag/1.0.0</releaseNotes>
+    <dependencies>
+      <dependency id="ghc" version="8.10.4" />
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="LICENSE.txt" target="LICENSE.txt" />
+  </files>
+</package>
