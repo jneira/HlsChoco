@@ -37,6 +37,18 @@ function Install-Hls($ghcVersion) {
   Rename-Item $info.exePath $info.finalName
 }
 
+function Get-InstalledGhcMinorVersions () {
+  $mbGhcs = choco list ghc --all --local --limit-output
+
+  $minorVersions = foreach ($ghc in $mbGhcs) {
+    $nameVersion = $ghc.split("|")
+    if (($nameVersion[0] -eq "ghc")) {
+      Get-MinorVersion($nameVersion[1])
+    }
+  }
+  return $minorVersions | Get-Unique
+}
+
 ForEach ($ghcVersion in $ghcVersions) {
   Install-Hls $ghcVersion
 }
