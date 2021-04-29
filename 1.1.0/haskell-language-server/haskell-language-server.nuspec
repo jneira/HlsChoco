@@ -3,7 +3,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
   <metadata>
     <id>haskell-language-server</id>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <packageSourceUrl>https://github.com/jneira/HlsChoco</packageSourceUrl>
     <title>Haskell Language Server</title>
     <authors>Haskell IDE Team</authors>
@@ -16,7 +16,19 @@
     <bugTrackerUrl>https://github.com/haskell/haskell-language-server/issues</bugTrackerUrl>
     <tags>haskell-language-server lsp-server haskell ide</tags>
     <summary>Successor of ghcide and haskell-ide-engine. One IDE to rule them all</summary>
-    <description>See https://github.com/haskell/haskell-language-server/blob/master/README.md</description>
+    <description>See https://github.com/haskell/haskell-language-server/blob/master/README.md
+    ### Package Specific
+    #### Package Parameters
+    The following package parameters can be set:
+
+    * `/Port:` - determines what port to listen on - defaults to "81"
+    * `/Edition:` - What edition to install - defaults to "LicenseKey"
+    * `/AdditionalTools` - install additional tools
+    * `/InstallationPath:` - Where to install the binaries to - defaults to "`$env:SystemDrive\temp`"
+
+    To pass parameters, use `--params "''"` (e.g. `choco install packageID [other options] --params="'/ITEM:value /ITEM2:value2 /FLAG_BOOLEAN'"`).
+    To have choco remember parameters on upgrade, be sure to set `choco feature enable -n=useRememberedArgumentsForUpgrades`.
+    </description>
     <releaseNotes>See https://github.com/haskell/haskell-language-server/releases/tag/1.0.0</releaseNotes>
     <dependencies>
       <dependency id="ghc" version="[8.6.4, 8.10.4]" />
