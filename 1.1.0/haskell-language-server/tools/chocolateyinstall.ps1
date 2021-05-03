@@ -58,10 +58,10 @@ function Get-InstalledGhcVersions() {
 
 $ghcVersions = @()
 
-if ($pp['install-for-all-supported-ghc-versions'] -or $pp['for-all-ghcs']) {
+if ($pp['for-all-ghcs']) {
   $ghcVersions = $supportedGhcVersions
   Write-Host "Installing $packageName for all supported ghc versions: $($ghcVersions -join ', ')"
-} elseif ($pp['install-for-ghc-versions'] -or $pp['for-ghcs']) {
+} elseif ($pp['for-ghcs']) {
   $ppForGhcs = $pp['install-for-ghc-versions']
   $ppForGhcs = if (-not $ppForGhcs) { $pp['for-ghcs'] } else { $ppForGhcs }
   $forGhcs = $ppForGhcs.split("|")
