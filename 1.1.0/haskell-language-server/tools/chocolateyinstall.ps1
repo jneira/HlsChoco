@@ -66,7 +66,7 @@ if ($pp['for-all-ghcs']) {
   $forGhcs = $ppForGhcs.split("|")
   $ghcVersions = $supportedGhcVersions.Where({$forGhcs.Contains($_)})
   if ($ghcVersions.Count -le 0) {
-    Write-Host "It as not been possible select any supported ghc versions using the parameter value $ppForGhcs"
+    Write-Host "It as not been possible to select any supported ghc versions using the parameter value $ppForGhcs"
     Write-Host "The supported ghc versions are $($supportedGhcVersions -join ', ')"
   } else {
     Write-Host "Installing $packageName for the selected ghc versions: $($ghcVersions -join ', ')" 
