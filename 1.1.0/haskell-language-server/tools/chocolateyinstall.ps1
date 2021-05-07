@@ -90,6 +90,7 @@ $supportedInstalledGhcs = (Compare-Object $ghcVersions $supportedGhcVersions `
 if ($supportedInstalledGhcs.Count -le 0) {
   Write-Host `
     "None of the selected ghc versions is supported by $packageName so I can't determine which binaries should be downloaded."
+  Write-Host "The supported ghc versions are $($supportedGhcVersions -join ', ')"
   exit -1
 }
 
