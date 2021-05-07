@@ -62,8 +62,7 @@ if ($pp['for-all-ghcs']) {
   $ghcVersions = $supportedGhcVersions
   Write-Host "Installing $packageName for all supported ghc versions: $($ghcVersions -join ', ')"
 } elseif ($pp['for-ghcs']) {
-  $ppForGhcs = $pp['install-for-ghc-versions']
-  $ppForGhcs = if (-not $ppForGhcs) { $pp['for-ghcs'] } else { $ppForGhcs }
+  $ppForGhcs = $pp['for-ghcs']
   $forGhcs = $ppForGhcs.split("|")
   $ghcVersions = $supportedGhcVersions.Where({$forGhcs.Contains($_)})
   if ($ghcVersions.Count -le 0) {
