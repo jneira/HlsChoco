@@ -1,6 +1,6 @@
 ﻿$version         = '1.1.0'
 $packageName     = 'haskell-language-server'
-$binRoot         = $(Split-Path -parent $MyInvocation.MyCommand.Definition)
+$binRoot         = Get-ToolsLocation
 $packageFullName = Join-Path $binRoot "$packageName-$version"
 $urlDownload     = "https://github.com/haskell/$packageName/releases/download"
 $pp              = Get-PackageParameters
