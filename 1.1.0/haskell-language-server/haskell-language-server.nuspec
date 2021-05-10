@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- Do not remove this test for UTF-8: if “Ω” doesn’t appear as greek uppercase omega letter enclosed in quotation marks, you should use an editor that supports UTF-8, not this one. -->
+<package xmlns="http://schemas.microsoft.com/packaging/2015/06/nuspec.xsd">
+  <metadata>
+    <id>haskell-language-server</id>
+    <version>1.1.0</version>
+    <packageSourceUrl>https://github.com/jneira/HlsChoco</packageSourceUrl>
+    <title>Haskell Language Server</title>
+    <authors>Haskell IDE Team</authors>
+    <projectUrl>https://github.com/haskell/haskell-language-server</projectUrl>
+    <iconUrl>https://github.com/haskell/haskell-language-server/raw/master/docs/logos/logo-32.png</iconUrl>
+    <copyright>Haskell IDE Team</copyright>
+    <licenseUrl>https://raw.githubusercontent.com/haskell/haskell-language-server/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <projectSourceUrl>https://github.com/haskell/haskell-language-server</projectSourceUrl>
+    <bugTrackerUrl>https://github.com/haskell/haskell-language-server/issues</bugTrackerUrl>
+    <tags>haskell-language-server lsp-server haskell ide</tags>
+    <summary>Successor of ghcide and haskell-ide-engine. One IDE to rule them all</summary>
+    <description>
+    # HlsChoco
+
+    Chocolatey sources for [haskell-language-server](https://github.com/haskell/haskell-language-server/blob/master/README.md) installs.
+
+    This repository contains the sources for the haskell-language-server Chocolatey packages.
+
+    ## Usage
+
+    To use these get [Chocolatey](https://chocolatey.org/) and then:
+
+    - for install `haskell-language-server` suited for the ghc versions you have installed using chocolatey:
+
+    ```powershell
+    > choco install haskell-language-server
+    ```
+
+    - for install `haskell-language-server` for some concrete ghc versions:
+
+    ```powershell
+    > choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.4"
+    ```
+
+    - for install `haskell-language-server` for *all* supported ghc versions (this could take quite time and disk space):
+
+    ```powershell
+    > choco install haskell-language-server --params="/for-all-ghcs"
+    ```
+
+    Actual ghc versions supported by `haskell-language-server`are: 8.10.4, 8.10.3, 8.10.2, 8.8.4, 8.6.5 and 8.6.4.
+
+    ## Dependencies
+
+    This package depends on chocolatey [ghc package](https://community.chocolatey.org/packages/ghc) which in turn depends on [the cabal one](https://community.chocolatey.org/packages/cabal) so this will install them if they are not already installed. If you want to avoid install them you can do:
+
+    ```powershell
+    > choco install haskell-language-server --ignore-dependencies
+    ```
+
+    ## Using it with stack
+
+    If you are going to use stack, which manages ghc's internally, you still could use the package, ignoring dependencies and telling the it what exact ghc versions you are gonna to use:
+
+    ```powershell
+    > choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.4" --ignore-dependencies
+    ```
+    </description>
+    <releaseNotes>See https://github.com/haskell/haskell-language-server/releases/tag/1.0.0</releaseNotes>
+    <dependencies>
+      <dependency id="ghc" version="[8.6.4, 8.10.4]" />
+      <dependency id="chocolatey-core.extension" version="1.1.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="tools\**" target="tools" />
+    <file src="LICENSE.txt" target="LICENSE.txt" />
+  </files>
+</package>
