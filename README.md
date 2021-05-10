@@ -38,7 +38,7 @@ This package depends on chocolatey [ghc package](https://community.chocolatey.or
 
 ## Using it with stack
 
-If you are going to use stack, which manages ghc's internally, you still could use the package, ignoring dependencies and telling the it what exact ghc versions you are gonna to use:
+If you are going to use stack, which manages ghc's internally, you still could use the package, ignoring dependencies and telling it what exact ghc versions you are gonna to use:
 
 ```powershell
 > choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.4" --ignore-dependencies
