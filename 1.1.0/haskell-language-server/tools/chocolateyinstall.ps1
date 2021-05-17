@@ -17,7 +17,7 @@ $checkSums64["8.6.4"]  = '2D7FBA52D7F73923922F461FD911BE421EC6A43C6434B4AE702802
 
 $ErrorActionPreference = 'Stop'; # stop on all errors
 
-# To get the real version ghc of choco specific patch versions (like 8.10.2.2)
+# To get the real version ghc of chocolatey specific patch versions (like 8.10.2.2)
 function Get-RealVersion($ghcVersion) {
   $realVersion = $ghcVersion | Select-String -pattern "\d+\.\d+\.\d+"
   return $realVersion.Matches.Value
