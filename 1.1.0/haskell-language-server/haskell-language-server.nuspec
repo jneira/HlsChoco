@@ -4,7 +4,7 @@
   <metadata>
     <id>haskell-language-server</id>
     <version>1.1.0</version>
-    <packageSourceUrl>https://github.com/jneira/HlsChoco</packageSourceUrl>
+    <packageSourceUrl>https://github.com/haskell/haskell-language-server</packageSourceUrl>
     <title>Haskell Language Server</title>
     <authors>Haskell IDE Team</authors>
     <projectUrl>https://github.com/haskell/haskell-language-server</projectUrl>
