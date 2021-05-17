@@ -8,7 +8,7 @@
     <title>Haskell Language Server</title>
     <authors>Haskell IDE Team</authors>
     <projectUrl>https://github.com/haskell/haskell-language-server</projectUrl>
-    <iconUrl>https://github.com/haskell/haskell-language-server/raw/master/docs/logos/logo-32.png</iconUrl>
+    <iconUrl>https://github.com/haskell/haskell-language-server/raw/master/docs/logos/logo-128.png</iconUrl>
     <copyright>Haskell IDE Team</copyright>
     <licenseUrl>https://raw.githubusercontent.com/haskell/haskell-language-server/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
