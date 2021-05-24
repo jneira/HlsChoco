@@ -17,12 +17,6 @@ $checkSums64["8.6.4"]  = '2D7FBA52D7F73923922F461FD911BE421EC6A43C6434B4AE702802
 
 $ErrorActionPreference = 'Stop'; # stop on all errors
 
-# To get the real version ghc of chocolatey specific patch versions (like 8.10.2.2)
-function Get-RealVersion($ghcVersion) {
-  $realVersion = $ghcVersion | Select-String -pattern "\d+\.\d+\.\d+"
-  return $realVersion.Matches.Value
-}
-
 function Get-HlsInstallInfo($ghcVersion) {
   $info           = @{}
   $info.url       = "$urlDownload/$version/$packageName-Windows-$ghcVersion.exe.zip"
@@ -45,13 +39,10 @@ function Install-Hls($ghcVersion) {
 }
 
 function Get-InstalledGhcVersions() {
-  $mbGhcs = choco list ghc --all --local --limit-output
+  $ghcExes = $(Get-Command ghc -All).path
 
-  $versions = foreach ($ghc in $mbGhcs) {
-    $nameVersion = $ghc.split("|")
-    if (($nameVersion[0] -eq "ghc")) {
-      Get-RealVersion $nameVersion[1]
-    }
+  $versions = foreach ($ghc in $ghcExes) {
+    Invoke-Expression "$ghc --numeric-version"
   }
   return $versions
 }
@@ -73,7 +64,13 @@ if ($pp['for-all-ghcs']) {
   }
 } else {
   $ghcVersions = Get-InstalledGhcVersions
-  Write-Host "Installing $packageName for each ghc installed with chocolatey: $($ghcVersions -join ', ')"
+  if ($ghcVersions.Count -le 0) {
+    Write-Host `
+     "There is no ghc versions in PATH. Installing for the default ghc version $($supportedVersions[0])"
+    $ghcVersions = @($supportedVersions[0])
+  } else {
+    Write-Host "Ghc versions found in PATH: $($ghcVersions -join ', ')"
+  }
 }
 
 
@@ -93,6 +90,8 @@ if ($supportedInstalledGhcs.Count -le 0) {
   Write-Host "The supported ghc versions are $($supportedGhcVersions -join ', ')"
   exit -1
 }
+
+Write-Host "Installing $packageName for the selected and supported ghc versions: $($ghcVersions -join ', ')"
 
 ForEach ($ghcVersion in $supportedInstalledGhcs) {
   Write-Host "Installing $packageName $ghcVersion"
