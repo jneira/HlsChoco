@@ -63,7 +63,7 @@ if ($pp['for-all-ghcs']) {
     Write-Host "Installing $packageName for the selected ghc versions: $($ghcVersions -join ', ')" 
   }
 } else {
-  $ghcVersions = Get-InstalledGhcVersions
+  $ghcVersions = Get-InstalledGhcVersions | Get-Unique
   if ($ghcVersions.Count -le 0) {
     Write-Host `
      "There is no ghc versions in PATH. Installing for the default ghc version $($supportedVersions[0])"
@@ -91,7 +91,7 @@ if ($supportedInstalledGhcs.Count -le 0) {
   exit -1
 }
 
-Write-Host "Installing $packageName for the selected and supported ghc versions: $($ghcVersions -join ', ')"
+Write-Host "Installing $packageName for the selected and supported ghc versions: $($supportedInstalledGhcs -join ', ')"
 
 ForEach ($ghcVersion in $supportedInstalledGhcs) {
   Write-Host "Installing $packageName $ghcVersion"
