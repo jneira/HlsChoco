@@ -8,7 +8,7 @@ This repository contains the sources for the haskell-language-server Chocolatey 
 
 To use these get [Chocolatey](https://chocolatey.org/) and then:
 
-- for install `haskell-language-server` suited for the ghc versions you have installed using chocolatey:
+- for install `haskell-language-server` suited for the ghc versions you have in `PATH`:
 
 ```powershell
 > choco install haskell-language-server
