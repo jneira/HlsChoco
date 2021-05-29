@@ -26,7 +26,7 @@ To use these get [Chocolatey](https://chocolatey.org/) and then:
 > choco install haskell-language-server --params="/for-all-ghcs"
 ```
 
-Actual ghc versions supported by `haskell-language-server`are: 8.10.4, 8.10.3, 8.10.2, 8.8.4, 8.6.5 and 8.6.4.
+Actual ghc versions supported by `haskell-language-server` are: 8.10.4, 8.10.3, 8.10.2, 8.8.4, 8.6.5 and 8.6.4.
 
 ## Dependencies
 
