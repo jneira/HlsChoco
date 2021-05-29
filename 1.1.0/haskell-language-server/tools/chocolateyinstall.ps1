@@ -40,7 +40,7 @@ function Install-Hls($ghcVersion) {
 
 function Get-InstalledGhcVersions() {
   Update-SessionEnvironment
-  $ghcExes = $(Get-Command ghc -All).path
+  $ghcExes = $(Get-Command ghc -All -CommandType Application).path
 
   $versions = foreach ($ghc in $ghcExes) {
     Invoke-Expression "$ghc --numeric-version"
