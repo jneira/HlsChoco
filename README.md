@@ -48,6 +48,6 @@ choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.4" --
 
 1. Change all occurrences of the previous hls version with the new one
 2. Update .nuspec with the range of supported ghc versions
-3. Update PS script with the list of ghc supported versions with their checksums
+3. Update PS script with the list of ghc supported versions with their checksums (including the wrapper)
 4. run `cd ${HLS_VERSION}\haskell-language-server; choco pack --force`
 5. run `choco push haskell-language-server.${HLS_VERSION}.nupkg -s https://push.chocolatey.org/ -apikey ${CHOCO_API_KEY}`
