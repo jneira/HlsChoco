@@ -19,6 +19,8 @@ $checkSums64["8.8.4"]  = 'ab9a5c163a0880f31c36759a540fc65890ca199c778c61b6e567b9
 $checkSums64["8.6.5"]  = '4b351db58835facf57813f3b9df366a3f740b662c363888a658befb73c0e664f'
 $checkSums64["8.6.4"]  = '4c103fc450b6fef405fb69183ca7f418e8c6c5f9aa0c6efd3ea87da84b2d3ea5'
 
+$checksumWrapper64     = 'b0447c7518afbd20c0924d28551356e4a1451967c1264ff1a27f861e324112c6'
+
 $ErrorActionPreference = 'Stop'; # stop on all errors
 
 function Get-HlsInstallInfo($ghcVersion) {
@@ -108,7 +110,6 @@ Write-Host "Downloading $packageName-wrapper"
 $wrapperName       = "$packageName-wrapper"
 $zipFile           = "$wrapperName-Windows.exe.zip"
 $urlWrapper64      = "$urlDownload/$version/$zipFile"
-$checksumWrapper64 = '4528CD2F6BCEEF7BABD1CA0D0648C10387E4AC04BA5D9B86D76F92F47BC8A509'
 
 Install-ChocolateyZipPackage `
  -PackageName $packageName -UnzipLocation $packageFullName `
