@@ -8,7 +8,7 @@
     <title>Haskell Language Server</title>
     <authors>Haskell IDE Team</authors>
     <projectUrl>https://github.com/haskell/haskell-language-server</projectUrl>
-    <iconUrl>https://rawcdn.githack.com/haskell/haskell-language-server/3763832a752e4e64e45070ad01b67a8215ddf19b/docs/logos/logo-128.png</iconUrl>
+    <iconUrl>https://rawcdn.githack.com/jneira/HlsChoco/93d32d572459beb0fc121d0398fb2131f06c820e/logo-128.png</iconUrl>
     <copyright>Haskell IDE Team</copyright>
     <licenseUrl>https://raw.githubusercontent.com/haskell/haskell-language-server/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
