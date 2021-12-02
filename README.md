@@ -8,25 +8,25 @@ This repository contains the sources for the haskell-language-server Chocolatey 
 
 To use these get [Chocolatey](https://chocolatey.org/) and then:
 
-- for install `haskell-language-server` suited for the ghc versions you have in `PATH`:
+* for install `haskell-language-server` suited for the ghc versions you have in `PATH`:
 
 ```shell
 choco install haskell-language-server
 ```
 
-- for install `haskell-language-server` for some concrete ghc versions:
+* for install `haskell-language-server` for some concrete ghc versions:
 
 ```shell
-choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.4"
+choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.7|9.0.1"
 ```
 
-- for install `haskell-language-server` for *all* supported ghc versions (this could take quite time and disk space):
+* for install `haskell-language-server` for *all* supported ghc versions (this could take quite time and disk space):
 
 ```shell
 choco install haskell-language-server --params="/for-all-ghcs"
 ```
 
-Actual ghc versions supported by `haskell-language-server` are: 8.10.4, 8.10.3, 8.10.2, 8.8.4, 8.6.5 and 8.6.4.
+Actual ghc versions supported by `haskell-language-server` are: 9.0.1, 8.10.7, 8.10.6, 8.10.5, 8.8.4, 8.8.3 and 8.6.5.
 
 ## Dependencies
 
@@ -41,7 +41,7 @@ choco install haskell-language-server --ignore-dependencies
 If you are going to use stack, which manages ghc's internally, you still could use the package, ignoring dependencies and telling it what exact ghc versions you are gonna to use:
 
 ```shell
-choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.4" --ignore-dependencies
+choco install haskell-language-server --params="/for-ghcs:8.6.5|8.8.4|8.10.7|9.0.1" --ignore-dependencies
 ```
 
 ## Release
